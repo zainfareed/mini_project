@@ -1,9 +1,12 @@
 #include <iostream>
 using namespace std;
 
+void add_new_appointment();
+void list_all_appointments();
+void quit();
 int main(int argc, char const *argv[]) {
   int nmbr;
-std::cout << "Enter the number : ";
+std::cout << "Enter the number(1,2 or 3) : ";
 std::cin >> nmbr;
 
 if (nmbr==1)
@@ -39,5 +42,5 @@ void list_all_appointments()
 
 void quit()
 {
-  
+  std::cout << "quit" << '\n';
 }
