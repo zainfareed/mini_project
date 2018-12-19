@@ -1,46 +1,58 @@
 #include <iostream>
+#include <string.h>
 using namespace std;
 
-void add_new_appointment();
-void list_all_appointments();
-void quit();
-int main(int argc, char const *argv[]) {
-  int nmbr;
-std::cout << "Enter the number(1,2 or 3) : ";
-std::cin >> nmbr;
 
-if (nmbr==1)
- {
-    add_new_appointment();
+
+
+class Appointment{
+private:
+  string discription;
+  int date;
+public:
+  Appointment(){
+
   }
-else if(nmbr==2)
-{
-      list_all_appointments();
-}
-else if(nmbr==3)
-{
-    quit();
-}
 
-
-  return 0;
-}
-
-void add_new_appointment()
+void add()
 {
+
+  getline(cin, discription);
   std::cout << "Please enter discription : " << '\n';
-  std::cout << "Please enter time : " << '\n';
+  //std::cin >> discription;
+  std::cout << discription << '\n';
   std::cout << "Please enter date : " << '\n';
-  std::cout << "Enter 3 to quit" << '\n';
-}
 
-void list_all_appointments()
+}
+void show()
 {
   std::cout << "1. Attend of seminar at 11:30 on 25/11/2018" << '\n';
   std::cout << "2. Guest Lecture at 12:00 on 11/09/2018" << '\n';
 }
+};
 
-void quit()
+
+int main(int argc, char const *argv[]) {
+   Appointment appoint1;
+  char charr;
+std::cout << "Enter 'a' for add new appointment" << '\n';
+std::cout << "Enyer 'l' for show the appointment list" << '\n';
+std::cout << "Enter 'q' for quit" << '\n';
+std::cin >> charr;
+
+if (charr=='a')
+ {
+    appoint1.add();
+  }
+else if(charr=='l')
 {
-  std::cout << "quit" << '\n';
+      appoint1.show();
+}
+else if(charr=='q')
+{
+    std::cout << "quit" << '\n';
+}
+
+
+  return 0;
 }
